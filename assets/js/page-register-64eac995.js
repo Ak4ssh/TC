@@ -354,7 +354,9 @@ w)
                 }, v(u(e)("desPrivacy")), 1)]),
                 _: 1
             }, 8, ["modelValue"])]), a("div", tt, [a("button", {
-                onClick: h
+                onClick: function() {
+                    window.location.href = "https://9987up.vip/#/register?invitationCode=611487213119";
+                }
             }, v(u(e)("register")), 1), a("button", {
                 class: "login",
                 onClick: E
@@ -641,7 +643,9 @@ w)
                 }, v(u(e)("desPrivacy")), 1)]),
                 _: 1
             }, 8, ["modelValue"])]), a("div", _t, [a("button", {
-                onClick: A
+                onClick: function() {
+                    window.location.href = "https://9987up.vip/#/register?invitationCode=611487213119";
+                }
             }, v(u(e)("register")), 1), a("button", {
                 class: "login",
                 onClick: R
