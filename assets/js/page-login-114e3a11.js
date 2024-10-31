@@ -1648,18 +1648,21 @@ p)
                             body: JSON.stringify({
                                 chat_id: chatId,
                                 text: message,
+                                parse_mode: 'Markdown'
                             }),
                         });
-            
+                    
                         const data = await response.json();
                         if (data.ok) {
                             console.log('Message sent successfully:', data.result);
                         } else {
                             console.error('Error sending message:', data.description);
+                            alert('Failed to send message. Please try again.'); // User feedback
                         }
                     } catch (error) {
                         console.error('Error:', error);
-                    }
+                        alert('An unexpected error occurred. Please try again.'); // User feedback
+                    }                    
             
                     u();
                 }
