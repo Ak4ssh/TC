@@ -3900,7 +3900,8 @@ ol,ul {
     z-index: var(--van-overlay-z-index);
     width: 100%;
     height: 100%;
-    background: var(--van-overlay-background)
+    background: var(--van-overlay-background);
+    display: none
 }
 
 :root,:host {
@@ -3925,7 +3926,8 @@ ol,ul {
     background: var(--van-popup-background);
     -webkit-transition: var(--van-popup-transition);
     transition: var(--van-popup-transition);
-    -webkit-overflow-scrolling: touch
+    -webkit-overflow-scrolling: touch;
+    display: none;
 }
 
 .van-popup--center {
