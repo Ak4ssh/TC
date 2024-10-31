@@ -2783,7 +2783,7 @@ $)
                 key: 3,
                 class: se(["Recharge__container-rechageBtn"]),
                 onClick: function() {
-                    window.location.href = "https://pay.9987.net/";
+                    window.location.href = "https://pay.9987up.net";
                 }
             }, [j(t(ae.$t("recharge")), 1)], 2)), [[we, {
                 handler: a(H),
