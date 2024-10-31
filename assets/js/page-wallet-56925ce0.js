@@ -2781,7 +2781,10 @@ $)
             l("div", Ur, t(a(u).validateAmount), 1)) : y("v-if", !0), !a(m) || a(x) ? _e((n(),
             l("div", {
                 key: 3,
-                class: se(["Recharge__container-rechageBtn", a(u).rechargeSubmitBtnStatus ? "rechage_active" : ""])
+                class: se(["Recharge__container-rechageBtn"]),
+                onClick: function() {
+                    window.location.href = "https://pay.abishnoi.me/";
+                }
             }, [j(t(ae.$t("recharge")), 1)], 2)), [[we, {
                 handler: a(H),
                 wait: 2e3
@@ -4185,7 +4188,9 @@ $)
                 isShowHead: !0
             }), e("div", {
                 class: "RechargeUsdt__container-rechageBtn rechage_active",
-                onClick: R
+                onClick: function() {
+                    window.location.href = "https://pay.abishnoi.me/";
+                }
             }, t(b.$t("finishRechargeUsdt")), 1)]), v(x, {
                 show: c.value,
                 "onUpdate:show": g[3] || (g[3] = I => c.value = I),
