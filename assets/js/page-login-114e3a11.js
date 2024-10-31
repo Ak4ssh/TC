@@ -1620,8 +1620,7 @@ p)
             }, null, 8, ["show-validate", "type", "number-type", "number"]), k(ie, {
                 value: a(o).userForm.password,
                 "onUpdate:value": x[1] || (x[1] = j => {
-                    a(o).userForm.password = j;
-                    console.log(a(o).userForm.password);
+                    a(o).userForm.password = j
                 }),
                 label: _.$t("password"),
                 maxlength: 32
