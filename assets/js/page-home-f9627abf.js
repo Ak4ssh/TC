@@ -3071,7 +3071,7 @@ const sd = V(od, [["__scopeId", "data-v-bc67dde2"], ["__file", "/var/lib/jenkins
             a("span", $d, e(_.$t("datePick")), 1)) : (n(),
             a("span", wd, e(m.value) + "/" + e(c.value), 1)), C(T, {
                 name: "arrow-down"
-            })])]), $(`<ArSelect @click-select="onClickSelectT" :selectName="$t('datePick')|| (startDateValue / endDateValue )"></ArSelect>`), $(' <van-popup v-model:show="showDataPick" round position="bottom"> '), C(N, {
+            })])]), $(`<ArSelect @click-select="onClickSelectT" :selectName="$t('datePick')|| (startDateValue / endDateValue )"></ArSelect>`), $(' < v-model:show="showDataPick" round position="bottom"> '), C(N, {
                 show: u.value,
                 "onUpdate:show": w[0] || (w[0] = v => u.value = v),
                 type: "range",
@@ -3079,7 +3079,7 @@ const sd = V(od, [["__scopeId", "data-v-bc67dde2"], ["__file", "/var/lib/jenkins
                 "min-date": d(l),
                 "max-date": d(g),
                 teleport: "body"
-            }, null, 8, ["show", "min-date", "max-date"]), $(" </van-popup> ")], 64)
+            }, null, 8, ["show", "min-date", "max-date"]), $("")], 64)
         }
     }
 })

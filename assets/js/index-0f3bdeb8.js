@@ -298,7 +298,6 @@ const Wt = D(zt, [["render", qt], ["__scopeId", "data-v-5eb72be7"], ["__file", "
         ),
         (w, L) => {
             const $ = T("svg-icon")
-              , j = T("van-dialog");
             return p(),
             A(j, {
                 show: n.value,

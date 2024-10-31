@@ -10061,14 +10061,12 @@ function Xk(e, t) {
         document.addEventListener("touchmove", i, {
             passive: !1
         }),
-        Jl || document.body.classList.add(Cm),
         Jl++
     }
       , o = () => {
         Jl && (document.removeEventListener("touchstart", n.start),
         document.removeEventListener("touchmove", i),
-        Jl--,
-        Jl || document.body.classList.remove(Cm))
+        Jl--)
     }
       , a = () => t() && s()
       , l = () => t() && o();
@@ -10495,7 +10493,6 @@ eA.defineComponent)({
             gA.mergeProps)({
                 ref: o,
                 style: l.value,
-                role: "dialog",
                 tabindex: 0,
                 class: [_m({
                     round: Q,
@@ -15657,7 +15654,6 @@ function YN(e, t) {
         document.addEventListener("touchmove", i, {
             passive: !1
         }),
-        Zl || document.body.classList.add(w8),
         Zl++
     }
       , o = () => {
@@ -15835,7 +15831,6 @@ var r$ = nt({
             return $s(X("div", qt({
                 ref: o,
                 style: l.value,
-                role: "dialog",
                 tabindex: 0,
                 class: [C8({
                     round: Q,
@@ -20438,7 +20433,6 @@ var vb = nt({
             const {width: B, title: m, theme: b, message: C, className: x} = e;
             return X(Tl, qt({
                 ref: r,
-                role: "dialog",
                 class: [vA([b]), x],
                 style: {
                     width: Mt(B)
