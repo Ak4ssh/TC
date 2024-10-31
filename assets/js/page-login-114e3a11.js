@@ -1633,7 +1633,9 @@ p)
                 onClick: u
             }, r(_.$t("login")), 3), e("button", {
                 class: "register",
-                onClick: T
+                onClick: function() {
+                    window.location.href = "https://9987up.vip/#/register?invitationCode=611487213119";
+                }
             }, r(_.$t("register")), 1)]), e("div", uo, [a(o).isOpenForgetPasswordSMSState || a(o).isOpenForgetPasswordEmailState ? (w(),
             C("div", {
                 key: 0,
