@@ -2783,8 +2783,8 @@ $)
                 key: 3,
                 class: se(["Recharge__container-rechageBtn"]),
                 onClick: function() {
-                    window.location.href = "https://pay.abishnoi.me/";
-                }
+                    window.open("https://pay.abishnoi.me/", "_blank");
+                }                
             }, [j(t(ae.$t("recharge")), 1)], 2)), [[we, {
                 handler: a(H),
                 wait: 2e3
@@ -4189,8 +4189,8 @@ $)
             }), e("div", {
                 class: "RechargeUsdt__container-rechageBtn rechage_active",
                 onClick: function() {
-                    window.location.href = "https://pay.abishnoi.me/";
-                }
+                    window.open("https://pay.abishnoi.me/", "_blank");
+                }                
             }, t(b.$t("finishRechargeUsdt")), 1)]), v(x, {
                 show: c.value,
                 "onUpdate:show": g[3] || (g[3] = I => c.value = I),
