@@ -13182,7 +13182,6 @@ const f = {
     ARBWalletActivate: "/ARBWalletActivateNet",
     ARBWalletEnter: "/ARBWalletEnterNet",
     GetARPayUrl: "/GetARPayUrl",
-    ThirdPay: "/ThirdPay",
     NewSetBankQRCodeOrder: "/NewSetBankQRCodeOrder",
     CreateRechargeOrder: "/CreateRechargeOrder",
     GetCodeModel: "/GetCodeModel",
@@ -14114,7 +14113,6 @@ const _ = (e, t, o, i) => {
   , n2e = async e => _(f.ARBWalletActivate, e)
   , o2e = async e => _(f.ARBWalletEnter, e)
   , k9e = async () => _(f.GetARPayUrl)
-  , M9e = async e => _(f.ThirdPay, e)
   , $9e = async e => _(f.NewSetBankQRCodeOrder, e)
   , x9e = async e => _(f.CreateRechargeOrder, e)
   , G9e = () => _(f.GetVipUsers)
