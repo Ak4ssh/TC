@@ -3212,7 +3212,7 @@ const Tc = de(Cc, [["__scopeId", "data-v-9f5f4114"], ["__file", "/var/lib/jenkin
                 _: 1
             }, 8, ["title"]), y(" 余额组件 "), v(ac), y(" 支付方式选择菜单 "), v(Ei), y(" 支付方式组件 "), v(Gr), y(` <div
 				v-if="!isHaveOrder || isOtherRecharge"
-				class="Recharge__container-rechageBtn222"
+				class="ok"
 				:class="store.rechargeSubmitBtnStatus ? 'rechage_active' : ''"
 				v-throttle-click="{ handler: handleRecharge, wait: 2000 }"
 			>
