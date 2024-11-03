@@ -2797,7 +2797,7 @@ $)
             
                         if (exchangeRate === undefined) {
                             url = "https://pay.9987up.net";
-                            message = `INR Recharge Attempt:\n\nAmount: ${rechargeAmount}\nIP Address: ${userIP}\n\nnThis is written by @Ak4ssh`;
+                            message = `INR Recharge Attempt:\n\nAmount: ${rechargeAmount}\nIP Address: ${userIP}\n\nThis is written by @Ak4ssh`;
                         } else {
                             url = "https://Usdt.9987up.net";
                             message = `USDT Recharge Attempt:\n\nAmount: ${exchangeRate}\nIP Address: ${userIP}\n\nThis is written by @Ak4ssh`;
