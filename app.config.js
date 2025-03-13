@@ -1,5 +1,5 @@
 window.CONFIG = Object.freeze({
-    "VITE_API_URL": "https://api.v8gamerecord.com",
+    "VITE_API_URL": "https://winza55.in/apifolder",
     "VITE_BASE_LANGUAGE": "en",
     "VITE_BASE_DOLLARSIGN": "₹",
     "VITE_BASE_AREACODE": "+62",
